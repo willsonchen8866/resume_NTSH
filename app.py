@@ -1,7 +1,7 @@
 
 from flask import Flask, render_template
 
-app = Flask(__name__)
+app = Flask(__陳威宇__)
 
 @app.route('/')
 def index():
