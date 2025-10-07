@@ -1,0 +1,20 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI應用</title>
+    <script>
+        function getResponse() {
+            var input = document.getElementById("userInput").value;
+            document.getElementById("response").innerText = "AI 回應: " + input;
+        }
+    </script>
+</head>
+<body>
+    <h1>AI應用互動頁面</h1>
+    <input type="text" id="userInput" placeholder="請輸入內容">
+    <button onclick="getResponse()">送出</button>
+    <p id="response"></p>
+    <a href="/">返回首頁</a>
+</body>
+</html>
