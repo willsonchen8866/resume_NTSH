@@ -3,182 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="新北高中30913陳威宇的讀書計畫與學習歷程">
-    <title>新北高中30913陳威宇的讀書計畫</title>
+    <title>新北高中30913 陳威宇的讀書計畫</title>
     <style>
-        /* ---- 全域設定 ---- */
         body {
-            font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
-            background: linear-gradient(to bottom right, #f8fbff, #e6f0ff);
-            color: #333;
+            font-family: "Noto Sans TC", sans-serif;
+            background: linear-gradient(135deg, #1a1a1a, #2c2c2c);
+            color: #eaeaea;
             margin: 0;
             padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            background-image: radial-gradient(circle at 30% 20%, #004b8d33 0%, transparent 40%),
+                              radial-gradient(circle at 70% 80%, #0078d733 0%, transparent 40%);
         }
 
-        /* ---- 頂部導覽列 ---- */
-        header {
-            background-color: #0056b3;
-            color: white;
-            padding: 20px 0;
-            box-shadow: 0 3px 6px rgba(0,0,0,0.15);
-        }
-
-        header h1 {
-            margin: 0;
+        h1 {
+            font-size: 1.8em;
+            margin-top: 60px;
             text-align: center;
-            font-size: 1.9rem;
+            background: linear-gradient(90deg, #00b4d8, #90e0ef, #caf0f8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             letter-spacing: 2px;
         }
 
-        /* ---- 導覽選單 ---- */
-        nav {
-            background: #ffffffdd;
+        h2 {
+            font-size: 1.2em;
+            text-align: center;
+            color: #cccccc;
+            margin-bottom: 50px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 420px;
             display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            padding: 15px;
-            border-bottom: 2px solid #d9e6ff;
+            flex-direction: column;
+            gap: 20px;
         }
 
-        nav a {
-            color: #0056b3;
+        .btn {
+            background: #2e2e2e;
+            border: 1px solid #3a3a3a;
+            border-radius: 14px;
+            padding: 18px 20px;
+            text-align: center;
+            font-size: 1.1em;
+            color: #00b4d8;
             text-decoration: none;
             font-weight: 600;
-            padding: 8px 15px;
-            border-radius: 10px;
-            transition: 0.2s;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
         }
 
-        nav a:hover {
-            background-color: #0056b3;
-            color: white;
-            transform: scale(1.05);
+        .btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 20px rgba(0, 180, 216, 0.3);
+            background: #383838;
         }
 
-        /* ---- 主內容區 ---- */
-        main {
-            max-width: 850px;
-            margin: 60px auto;
-            background: white;
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        .emoji {
+            margin-right: 8px;
         }
 
-        main h2 {
-            text-align: center;
-            color: #0056b3;
-            font-size: 1.6rem;
-            margin-bottom: 15px;
-        }
-
-        main p {
-            text-align: justify;
-            line-height: 1.8;
-            font-size: 1.05rem;
-        }
-
-        /* ---- 卡片區 ---- */
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-            gap: 25px;
-            margin-top: 35px;
-        }
-
-        .card {
-            background: #f4f8ff;
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 3px 8px rgba(0,0,0,0.08);
-            text-align: center;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-        }
-
-        .card a {
-            display: inline-block;
-            margin-top: 10px;
-            color: #0056b3;
-            font-weight: bold;
-            text-decoration: none;
-        }
-
-        .card a:hover {
-            color: #003f7f;
-        }
-
-        /* ---- 頁尾 ---- */
         footer {
-            text-align: center;
-            padding: 20px 0;
-            font-size: 0.9rem;
-            color: #555;
-            background-color: #f1f5ff;
-            border-top: 1px solid #cddfff;
-            margin-top: 50px;
-        }
-
-        footer a {
-            color: #0056b3;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
+            margin-top: 60px;
+            color: #777;
+            font-size: 0.9em;
         }
     </style>
 </head>
 <body>
+    <h1>新北高中30913 陳威宇的讀書計畫</h1>
+    <h2>Industrial Style • 工業風設計</h2>
 
-    <header>
-        <h1>新北高中30913陳威宇的讀書計畫</h1>
-    </header>
+    <div class="container">
+        <a href="/competition" class="btn"><span class="emoji">🏆</span>競賽經驗</a>
+        <a href="/activities" class="btn"><span class="emoji">🎯</span>課外活動</a>
+        <a href="/leadership" class="btn"><span class="emoji">😎</span>幹部經驗</a>
+        <a href="/club" class="btn"><span class="emoji">💫</span>社團經驗</a>
+        <a href="/electives" class="btn"><span class="emoji">📘</span>多元選修課程</a>
+        <a href="/ai" class="btn"><span class="emoji">🤖</span>AI 應用</a>
+    </div>
 
-    <nav>
-        <a href="/competition">🏆 競賽經驗</a>
-        <a href="/activities">🎯 課外活動</a>
-        <a href="/leadership">👑 幹部經驗</a>
-        <a href="/club">🎵 社團經驗</a>
-        <a href="/electives">📘 多元選修課程</a>
-        <a href="/ai">🤖 AI應用</a>
-    </nav>
-
-    <main>
-        <h2>學習計畫簡介</h2>
-        <p>
-            我是新北高中的學生陳威宇，就讀30913班，目標是考上理工科頂尖大學。
-            在高三階段，我希望透過明確的讀書計畫與實踐，鞏固學測與課內知識，同時培養自主學習與研究能力。
-            這個網站將記錄我的學習歷程、競賽經驗、課外活動與AI應用探索，展現我對科學與未來科技的熱情。
-        </p>
-
-        <div class="cards">
-            <div class="card">
-                <h3>競賽經驗</h3>
-                <p>展現邏輯思維與創新能力的舞台。</p>
-                <a href="/competition">了解更多 →</a>
-            </div>
-            <div class="card">
-                <h3>課外活動</h3>
-                <p>從實作中累積學習與成長。</p>
-                <a href="/activities">了解更多 →</a>
-            </div>
-            <div class="card">
-                <h3>AI應用</h3>
-                <p>人工智慧工具的應用與學習心得。</p>
-                <a href="/ai">了解更多 →</a>
-            </div>
-        </div>
-    </main>
-
-    <footer>
-        © 2025 新北高中30913陳威宇 ｜ <a href="/">回首頁</a>
-    </footer>
+    <footer>© 2025 新北高中30913 陳威宇</footer>
 </body>
 </html>
