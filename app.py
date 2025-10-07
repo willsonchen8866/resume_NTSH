@@ -8,7 +8,7 @@ app = Flask(__name__)
 def index():
     return render_template('index.html', title='讀書計畫首頁')
 
-# 六個分頁
+# 各分頁路由
 @app.route('/competition')
 def competition():
     return render_template('competition.html', title='競賽經驗')
