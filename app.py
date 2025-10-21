@@ -2,35 +2,6 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-# 各個路由對應頁面
-@app.route('/')
-def index():
-    return render_template('index.html', QA=questions_answers)
-
-@app.route('/competition')
-def competition():
-    return render_template('competition.html')
-
-@app.route('/activities')
-def activities():
-    return render_template('activities.html')
-
-@app.route('/leadership')
-def leadership():
-    return render_template('leadership.html')
-
-@app.route('/club')
-def club():
-    return render_template('club.html')
-
-@app.route('/electives')
-def electives():
-    return render_template('electives.html')
-
-@app.route('/ai')
-def ai():
-    return render_template('ai.html')
-
 # 問答字典
 questions_answers = {
     "蘋果": "apple",
@@ -67,6 +38,37 @@ questions_answers = {
     "nurse": "護士",
     "sad": "難過"
 }
+
+
+# 各個路由對應頁面
+@app.route('/')
+def index():
+    return render_template('index.html', QA=questions_answers)
+
+@app.route('/competition')
+def competition():
+    return render_template('competition.html')
+
+@app.route('/activities')
+def activities():
+    return render_template('activities.html')
+
+@app.route('/leadership')
+def leadership():
+    return render_template('leadership.html')
+
+@app.route('/club')
+def club():
+    return render_template('club.html')
+
+@app.route('/electives')
+def electives():
+    return render_template('electives.html')
+
+@app.route('/ai')
+def ai():
+    return render_template('ai.html')
+
 
 # /ask 問答處理
 @app.route('/ask', methods=['GET', 'POST'])
