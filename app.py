@@ -1,8 +1,37 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-# 建立問答集 Store questions and answers in a simple list for demonstration purposes
+# 各個路由對應頁面
+@app.route('/')
+def index():
+    return render_template('index.html', QA=questions_answers)
+
+@app.route('/competition')
+def competition():
+    return render_template('competition.html')
+
+@app.route('/activities')
+def activities():
+    return render_template('activities.html')
+
+@app.route('/leadership')
+def leadership():
+    return render_template('leadership.html')
+
+@app.route('/club')
+def club():
+    return render_template('club.html')
+
+@app.route('/electives')
+def electives():
+    return render_template('electives.html')
+
+@app.route('/ai')
+def ai():
+    return render_template('ai.html')
+
+# 問答字典
 questions_answers = {
     "蘋果": "apple",
     "apple": "蘋果",
@@ -35,52 +64,25 @@ questions_answers = {
     "醫生": "doctor",
     "doctor": "醫生",
     "護士": "nurse",
+    "nurse": "護士",
     "sad": "難過"
 }
 
-@app.route('/')
-def index():
-    return render_template('index.html')
-
-@app.route('/competition')
-def competition():
-    return render_template('competition.html')
-
-@app.route('/activities')
-def activities():
-    return render_template('activities.html')
-
-@app.route('/leadership')
-def leadership():
-    return render_template('leadership.html')
-
-@app.route('/club')
-def club():
-    return render_template('club.html')
-
-@app.route('/electives')
-def electives():
-    return render_template('electives.html')
-
-@app.route('/ai')
-def ai():
-    return render_template('ai.html')
-
-
-# 首頁/的處理
-@app.route('/')
-def index():
-    return render_template('index.html', QA=questions_answers)
-
-# 網頁/ask的處理
+# /ask 問答處理
 @app.route('/ask', methods=['GET', 'POST'])
 def ask_question():
+    question = ""
+    answer = ""
+    
     if request.method == 'POST':
-        q = request.form['question']
-        a = questions_answers[q]
-        return render_template('ask.html', question=q, answer=a)
-    return render_template('ask.html', question="", answer="")
+        question = request.form.get('question', '').strip()
+        if question:
+            answer = questions_answers.get(question, "很抱歉，我無法回答這個問題。")
+        else:
+            answer = "請輸入一個問題。"
 
+    return render_template('ask.html', question=question, answer=answer)
+
+# 啟動應用程式
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8080)
-
+    app.run(host='0.0.0.0', port=8080, debug=True)
